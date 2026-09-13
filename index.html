@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ankusha Rathi — UX Designer &amp; Researcher</title>
+  <meta name="description" content="Ankusha Rathi is a UX designer and researcher creating intuitive, thoughtful digital experiences.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d1d1f'/%3E%3Cpath d='M18 46 29 17h7l11 29h-7l-2.4-7H27l-2.5 7Zm11-13h6.5L32.3 23Z' fill='white'/%3E%3Ccircle cx='49' cy='16' r='5' fill='%230066cc'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --blue:#0066cc;
+      --blue-focus:#0071e3;
+      --blue-dark:#2997ff;
+      --ink:#1d1d1f;
+      --muted:#6e6e73;
+      --white:#fff;
+      --parchment:#f5f5f7;
+      --dark:#272729;
+      --black:#000;
+      --hairline:#e0e0e0;
+      --max:1120px;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0;
+      color:var(--ink);
+      background:var(--white);
+      font-family:-apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", system-ui, sans-serif;
+      font-size:17px;
+      line-height:1.47;
+      letter-spacing:-.022em;
+      -webkit-font-smoothing:antialiased;
+    }
+    a { color:inherit; }
+    .skip { position:fixed; left:16px; top:-80px; z-index:100; padding:12px 18px; background:#fff; color:#000; border-radius:999px; }
+    .skip:focus { top:12px; }
+    .global-nav { height:44px; background:var(--black); color:#fff; position:relative; z-index:20; }
+    .nav-inner, .subnav-inner { max-width:var(--max); height:100%; margin:auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; }
+    .brand { display:flex; align-items:center; gap:10px; text-decoration:none; font-size:14px; font-weight:600; letter-spacing:-.01em; }
+    .brand-mark { width:22px; height:22px; display:grid; place-items:center; border:1px solid rgba(255,255,255,.38); border-radius:6px; font-size:12px; }
+    .nav-links { display:flex; align-items:center; gap:28px; font-size:12px; letter-spacing:-.01em; }
+    .nav-links a { color:rgba(255,255,255,.8); text-decoration:none; transition:color .2s ease; }
+    .nav-links a:hover { color:#fff; }
+    .subnav { height:52px; position:sticky; top:0; z-index:15; background:rgba(245,245,247,.82); backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid rgba(0,0,0,.06); }
+    .subnav-title { font-size:21px; line-height:1; font-weight:600; }
+    .subnav-meta { display:flex; gap:22px; align-items:center; font-size:14px; }
+    .subnav-meta a { text-decoration:none; }
+    .pill { min-height:44px; display:inline-flex; align-items:center; justify-content:center; padding:10px 22px; border:1px solid var(--blue); border-radius:999px; color:var(--blue); font-weight:400; text-decoration:none; transition:transform .16s ease, background .16s ease, color .16s ease; }
+    .pill.primary { background:var(--blue); color:white; }
+    .pill:active { transform:scale(.95); }
+    .pill:focus-visible, a:focus-visible { outline:2px solid var(--blue-focus); outline-offset:3px; }
+    .hero { min-height:calc(100svh - 96px); background:var(--dark); color:white; display:grid; align-items:center; overflow:hidden; }
+    .hero-inner { width:100%; max-width:1440px; margin:auto; display:grid; grid-template-columns:minmax(0, .88fr) minmax(420px, 1.12fr); align-items:center; }
+    .hero-copy { padding:96px 48px 96px max(48px, calc((100vw - var(--max))/2 + 24px)); z-index:1; }
+    .eyebrow { margin:0 0 18px; color:#b7b7bd; font-size:14px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; }
+    h1, h2, h3 { font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", system-ui, sans-serif; margin-top:0; }
+    h1 { max-width:740px; margin-bottom:22px; font-size:clamp(3rem, 6.2vw, 6.5rem); line-height:.96; font-weight:600; letter-spacing:-.055em; }
+    .hero-lead { max-width:620px; margin:0 0 32px; color:#d2d2d7; font-size:clamp(1.25rem, 2vw, 1.75rem); line-height:1.2; letter-spacing:-.022em; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; }
+    .hero .pill:not(.primary) { border-color:var(--blue-dark); color:var(--blue-dark); }
+    .hero-art { height:100%; min-height:620px; position:relative; }
+    .hero-art img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+    .section { padding:112px 24px; }
+    .container { max-width:var(--max); margin:auto; }
+    .section-label { margin:0 0 28px; color:var(--blue); font-size:14px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; }
+    .statement { max-width:980px; margin:0; font-size:clamp(2.3rem, 5vw, 4.8rem); line-height:1.04; letter-spacing:-.048em; font-weight:600; }
+    .statement .soft { color:#86868b; }
+    .stats { margin-top:78px; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--hairline); }
+    .stat { padding:28px 28px 0 0; }
+    .stat strong { display:block; font-size:clamp(2rem,4vw,3.4rem); line-height:1; letter-spacing:-.04em; }
+    .stat span { display:block; margin-top:12px; color:var(--muted); font-size:14px; }
+    .dark-section { background:var(--dark); color:white; }
+    .section-head { display:grid; grid-template-columns:.72fr 1.28fr; gap:64px; margin-bottom:72px; }
+    .section-head h2 { margin:0; font-size:clamp(2.4rem,5vw,4.6rem); line-height:1; letter-spacing:-.045em; }
+    .section-head p { max-width:620px; margin:10px 0 0; color:#ccc; font-size:24px; line-height:1.5; font-weight:300; }
+    .timeline { border-top:1px solid rgba(255,255,255,.18); }
+    .timeline-item { display:grid; grid-template-columns:.72fr 1.28fr; gap:64px; padding:36px 0; border-bottom:1px solid rgba(255,255,255,.18); }
+    .timeline-item .date { color:#a1a1a6; font-size:14px; }
+    .timeline-item h3 { margin:0 0 8px; font-size:28px; line-height:1.14; font-weight:600; }
+    .timeline-item p { margin:0; color:#ccc; }
+    .project-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--hairline); border:1px solid var(--hairline); }
+    .project { min-height:370px; padding:36px; background:white; display:flex; flex-direction:column; }
+    .project .num { color:var(--muted); font-size:14px; }
+    .project h3 { margin:60px 0 14px; font-size:28px; line-height:1.1; letter-spacing:-.03em; }
+    .project p { margin:0; color:var(--muted); }
+    .project time { margin-top:auto; padding-top:32px; color:var(--blue); font-size:14px; }
+    .credential-section { background:var(--parchment); }
+    .credentials { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+    .credential { min-height:190px; padding:28px; background:white; border:1px solid var(--hairline); border-radius:18px; }
+    .credential h3 { margin:0 0 9px; font-size:21px; line-height:1.2; }
+    .credential p { margin:0; color:var(--muted); }
+    .credential .issued { margin-top:32px; color:var(--blue); font-size:14px; }
+    .language-band { background:#000; color:#fff; padding:76px 24px; }
+    .language-row { max-width:var(--max); margin:auto; display:grid; grid-template-columns:1fr 2fr; gap:48px; align-items:start; }
+    .language-row h2 { margin:0; font-size:40px; letter-spacing:-.04em; }
+    .language-list { margin:0; padding:0; list-style:none; }
+    .language-list li { display:flex; justify-content:space-between; gap:24px; padding:17px 0; border-bottom:1px solid rgba(255,255,255,.2); }
+    .language-list span:last-child { color:#a1a1a6; text-align:right; }
+    footer { padding:72px 24px; background:var(--parchment); }
+    .footer-inner { max-width:var(--max); margin:auto; display:flex; justify-content:space-between; gap:40px; align-items:flex-end; }
+    .footer-cta { max-width:700px; }
+    .footer-cta h2 { margin:0 0 28px; font-size:clamp(2.5rem,5vw,4.8rem); line-height:1; letter-spacing:-.05em; }
+    .footer-note { color:var(--muted); font-size:12px; text-align:right; }
+    .reveal { opacity:0; transform:translateY(18px); transition:opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+    @media (prefers-reduced-motion:reduce) { html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none} }
+    @media (max-width:833px) {
+      .nav-links a:not(:last-child), .subnav-meta span { display:none; }
+      .hero-inner { grid-template-columns:1fr; }
+      .hero-copy { padding:80px 24px 54px; }
+      .hero-art { min-height:420px; order:-1; }
+      .hero-art img { object-position:62% center; }
+      .section { padding:80px 24px; }
+      .section-head, .timeline-item, .language-row { grid-template-columns:1fr; gap:28px; }
+      .project-grid { grid-template-columns:1fr; }
+      .project { min-height:310px; }
+      .credentials { grid-template-columns:1fr; }
+      .footer-inner { align-items:flex-start; flex-direction:column; }
+      .footer-note { text-align:left; }
+    }
+    @media (max-width:540px) {
+      .nav-inner, .subnav-inner { padding:0 16px; }
+      .nav-links { gap:12px; }
+      .brand span:last-child { display:none; }
+      .subnav-title { font-size:18px; }
+      .hero-art { min-height:320px; }
+      .hero-copy { padding-top:56px; }
+      .stats { grid-template-columns:1fr; }
+      .stat { padding:24px 0; border-bottom:1px solid var(--hairline); }
+      .project, .credential { padding:24px; }
+      .language-list li { flex-direction:column; gap:2px; }
+      .language-list span:last-child { text-align:left; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <nav class="global-nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a class="brand" href="#top" aria-label="Ankusha Rathi, home"><span class="brand-mark">AR</span><span>Ankusha Rathi</span></a>
+        <div class="nav-links">
+          <a href="#about">About</a><a href="#experience">Experience</a><a href="#work">Work</a><a href="#credentials">Credentials</a>
+        </div>
+      </div>
+    </nav>
+    <nav class="subnav" aria-label="Profile navigation">
+      <div class="subnav-inner">
+        <span class="subnav-title">UX Designer &amp; Researcher</span>
+        <div class="subnav-meta"><span>India · Verizon</span><a class="pill primary" href="https://www.linkedin.com/in/ankusha-rathi-ab120737/" target="_blank" rel="noreferrer">LinkedIn</a></div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Hello, I’m Ankusha Rathi</p>
+          <h1>Designing clarity into every experience.</h1>
+          <p class="hero-lead">A passionate UX designer and researcher transforming complex ideas into intuitive, human experiences.</p>
+          <div class="actions"><a class="pill primary" href="#about">Discover my approach</a><a class="pill" href="#work">Selected work</a></div>
+        </div>
+        <div class="hero-art"><img src="assets/design-sculpture.png" alt="Abstract glass forms connected by a blue ribbon, representing connected human experiences" width="1536" height="1024"></div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container reveal">
+        <p class="section-label">About</p>
+        <h2 class="statement">Dedicated to making digital products feel <span class="soft">intuitive, delightful, and unmistakably human.</span></h2>
+        <div class="stats" aria-label="Profile highlights">
+          <div class="stat"><strong>1K+</strong><span>LinkedIn followers</span></div>
+          <div class="stat"><strong>500+</strong><span>Professional connections</span></div>
+          <div class="stat"><strong>3</strong><span>Languages spoken</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-section" id="experience">
+      <div class="container reveal">
+        <div class="section-head"><p class="section-label">Experience &amp; Education</p><div><h2>A perspective shaped by design and communication.</h2><p>Bringing research, creative strategy, and thoughtful execution together to make products easier to understand and use.</p></div></div>
+        <div class="timeline">
+          <article class="timeline-item"><div class="date">Current</div><div><h3>Verizon</h3><p>UX design and research · Chennai, Tamil Nadu, India</p></div></article>
+          <article class="timeline-item"><div class="date">2011–2012</div><div><h3>University of Leeds</h3><p>Graduate education with a focus on communication and creative strategy.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container reveal">
+        <div class="section-head"><p class="section-label">Selected Projects</p><div><h2>Ideas carried from insight to expression.</h2></div></div>
+        <div class="project-grid">
+          <article class="project"><span class="num">01</span><h3>Creative Direction — Eva Deo</h3><p>Researched why the brand lost market share, then shaped an integrated rebranding and relaunch campaign to rebuild recall.</p><time datetime="2012-06">June 2012</time></article>
+          <article class="project"><span class="num">02</span><h3>GoodLife Advertising Campaign</h3><p>Developed a B2B and B2C campaign focused on awareness, product understanding, brand preference, loyalty, and growth.</p><time datetime="2012-02">February 2012</time></article>
+          <article class="project"><span class="num">03</span><h3>Aviva Integrated Communication</h3><p>Created a strategy encouraging young people to save, expressed across television, print, ambient media, and a mobile app.</p><time datetime="2012-01">January 2012</time></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section credential-section" id="credentials">
+      <div class="container reveal">
+        <div class="section-head"><p class="section-label">Credentials</p><div><h2>Always learning. Always refining.</h2></div></div>
+        <div class="credentials">
+          <article class="credential"><h3>User Experience Professional — Level 3</h3><p>uxmint academy</p><div class="issued">Issued July 2020</div></article>
+          <article class="credential"><h3>Digital Marketing</h3><p>Loyola Institute of Business Administration</p><div class="issued">Issued December 2019</div></article>
+          <article class="credential"><h3>UX Designer from Scratch</h3><p>Interaction Design Foundation · Credential 57441</p><div class="issued">Issued November 2019</div></article>
+          <article class="credential"><h3>User Experience — The Beginner’s Guide</h3><p>Interaction Design Foundation · Credential 57441</p><div class="issued">Issued September 2019</div></article>
+          <article class="credential"><h3>IELTS</h3><p>International English Language Testing System</p><div class="issued">Score 7.5 · December 2010</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="language-band">
+      <div class="language-row reveal"><h2>Languages</h2><ul class="language-list"><li><span>English</span><span>Full professional proficiency</span></li><li><span>Hindi</span><span>Full professional proficiency</span></li><li><span>Tamil</span><span>Limited working proficiency</span></li></ul></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner reveal">
+      <div class="footer-cta"><h2>Let’s make the complex feel simple.</h2><a class="pill primary" href="https://www.linkedin.com/in/ankusha-rathi-ab120737/" target="_blank" rel="noreferrer">Connect on LinkedIn</a></div>
+      <div class="footer-note">© <span id="year"></span> Ankusha Rathi<br>Profile details sourced from LinkedIn.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    }), { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
